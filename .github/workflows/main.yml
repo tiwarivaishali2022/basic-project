@@ -21,5 +21,8 @@ jobs:
 
       - name: Deploy to AWS S3
         run: |
-          aws s3 sync . s3://page-s3  --exclude '.git*/*' --delete
+          cd cicd
+          npm i
+          npm run build
+          aws s3 sync ./build s3://page-s3  --exclude '.git*/*' --delete
           
