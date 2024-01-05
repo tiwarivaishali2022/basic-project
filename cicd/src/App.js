@@ -1,11 +1,16 @@
-import './App.css';
+import React, { useState } from 'react'
 
-function App() {
+export default function App() {
+
+  const [state, setState]= useState(0);
+
+  const count = () => {
+    setState(20)
+  };
   return (
-    <div className="App">
-      <h1>Hello word</h1>
+    <div>
+      <p>Current State: {state}</p>
+      <button onClick={count}>Update State</button>
     </div>
-  );
+  )
 }
-
-export default App;
