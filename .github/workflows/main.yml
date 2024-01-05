@@ -24,6 +24,7 @@ jobs:
           cd cicd
           npm i
           npm run build
+          cd build
           ls
-          aws s3 sync ./build/* s3://page-s3  --exclude '.git*/*' --delete
+          aws s3 sync . s3://page-s3  --exclude '.git*/*' --delete
           
